@@ -1,0 +1,17 @@
+{
+  "name": "angular-2-to-do",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Sailor Winkelman <sailorwinkelman@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
