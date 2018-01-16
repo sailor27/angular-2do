@@ -5,11 +5,26 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
   <div class="container jumbotron">
-    <h1>My First Angular 2 App</h1>
+  <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
+  <h3>{{currentFocus}}</h3>
+  <ul>
+    <li>{{firstTask.description}}</li>
+  </ul>
+
   </div>
   `
 })
 
 export class AppComponent {
-
+  //property to hold the variable which indicates our current focus
+  currentFocus: string = 'Angular Homework';
+  currentTime = new Date();
+  month: number = this.currentTime.getMonth() + 1;
+  day: number = this.currentTime.getDate();
+  year: number = this.currentTime.getFullYear();
+  //In Angular, when a variable in a component's class declaration references
+  //another variable in the class, it must be prefaced with the this keyword.
+  firstTask = {
+    description: "✏️Finish weekend Angular homework for Epicodus Course"
+  }
 }
