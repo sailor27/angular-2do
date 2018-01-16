@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
   <h3>{{currentFocus}}</h3>
   <ul>
-    <li>{{firstTask.description}}</li>
+    <li *ngFor="let currentTask of tasks">{{currentTask.description}}</li>
   </ul>
 
   </div>
@@ -24,7 +24,11 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
   //In Angular, when a variable in a component's class declaration references
   //another variable in the class, it must be prefaced with the this. keyword.
-  firstTask: Task = new Task("✏️Finish weekend Angular homework for Epicodus Course");
+  tasks: Task [] = [
+    new Task('Finish weekend Angular homework for Epicodus Course ✏️📒'),
+    new Task('Begin Brainstorming possible Javascript group projects 📒🍅'),
+    new Task('Add README file to Angular projects on github '),
+  ];
 }
 
 export class Task {
